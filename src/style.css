@@ -1,126 +1,172 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #121212;
-  color: #fff;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica", sans-serif;
 }
 
-.app {
+body {
+  background: #121212;
+  color: #fff;
   display: flex;
   height: 100vh;
 }
 
+.app {
+  display: flex;
+  width: 100%;
+}
+
 .sidebar {
-  width: 220px;
-  background: #000000;
-  padding: 20px;
+  background: #181818;
+  width: 240px;
+  padding: 1rem;
 }
 .sidebar .logo {
   color: #1db954;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
-.sidebar ul {
+.sidebar nav ul {
   list-style: none;
-  padding: 0;
 }
-.sidebar ul li {
-  padding: 10px 0;
+.sidebar nav ul li {
+  padding: 0.8rem;
   cursor: pointer;
   color: #b3b3b3;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
-.sidebar ul li:hover {
+.sidebar nav ul li.active, .sidebar nav ul li:hover {
+  background: rgb(36.75, 36.75, 36.75);
   color: #fff;
 }
 
 .content {
   flex: 1;
-  background: #181818;
-  padding: 20px;
+  padding: 2rem;
   overflow-y: auto;
 }
 .content .header {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+.content .header h2 {
+  margin-bottom: 0.5rem;
+  color: #1db954;
+}
+.content .header #weather {
+  font-size: 1rem;
+  color: #b3b3b3;
 }
 .content .songs {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
 }
 .content .songs .song {
-  background: #282828;
-  padding: 10px;
-  border-radius: 8px;
+  background: #181818;
+  padding: 1rem;
+  border-radius: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s;
+}
+.content .songs .song:hover {
+  transform: scale(1.05);
 }
 .content .songs .song img {
-  width: 100%;
-  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
 }
 .content .songs .song h3 {
-  margin: 10px 0 0;
+  font-size: 1rem;
 }
 .content .songs .song p {
+  font-size: 0.8rem;
   color: #b3b3b3;
-  margin: 0 0 10px;
 }
 .content .songs .song .play {
+  margin-left: auto;
   background: #1db954;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  color: #fff;
+  padding: 0.5rem;
   cursor: pointer;
-}
-.content .chat {
-  margin-top: 30px;
-  background: #282828;
-  padding: 15px;
-  border-radius: 8px;
+  color: #fff;
 }
 .content .chat #messages {
-  height: 200px;
-  overflow-y: auto;
   background: #181818;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 1rem;
+  border-radius: 8px;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
 }
-.content .chat input {
-  width: 70%;
-  padding: 8px;
+.content .chat .chat-input {
+  display: flex;
+  gap: 0.5rem;
+}
+.content .chat .chat-input input {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 6px;
   border: none;
-  border-radius: 4px;
+  outline: none;
 }
-.content .chat button {
+.content .chat .chat-input button {
   background: #1db954;
   border: none;
-  padding: 8px 12px;
-  margin-left: 8px;
-  border-radius: 4px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
   cursor: pointer;
+  color: #fff;
+  font-weight: bold;
 }
 
 .player {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   background: #181818;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
   align-items: center;
+  padding: 1rem;
 }
 .player .player-left {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 .player .player-left img {
   width: 50px;
-  border-radius: 4px;
-  margin-right: 10px;
+  height: 50px;
+  border-radius: 6px;
+}
+.player .player-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.player .player-center button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.player .player-center #progress {
+  width: 200px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

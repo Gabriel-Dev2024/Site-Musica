@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Música + Clima + Chat</title>
+  <title>Música</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,10 +13,7 @@
       <h1 class="logo">🎵 Musicas</h1>
       <nav>
         <ul>
-          <li>Início</li>
-          <li>Buscar</li>
-          <li>Sua Biblioteca</li>
-          <li id="chat-tab">💬 Chat</li>
+          <li id="tab-music">Início</li>
         </ul>
       </nav>
     </aside>
@@ -30,7 +27,7 @@
       </header>
 
       <!-- Músicas -->
-      <section class="songs">
+      <section class="songs tab active" id="music-tab">
         <div class="song" data-src="music/Tornado of Souls.mp3">
           <img src="images/Rust In Peace.jpg" alt="Capa 1" />
           <div>
@@ -50,7 +47,7 @@
       </section>
 
       <!-- Chat -->
-      <section class="chat" id="chat">
+      <section class="chat tab" id="chat-tab-content">
         <h2>Chat em tempo real</h2>
         <div id="messages"></div>
         <input id="chat-input" type="text" placeholder="Digite sua mensagem..." />
@@ -62,7 +59,7 @@
   <!-- Player -->
   <footer class="player">
     <div class="player-left">
-      <img id="player-cover" src="images/Rust In Peace.jpg" alt="Capa" />
+      <img id="player-cover" src="images/Foto_Preta.jpg" alt="Capa" />
       <div>
         <h3 id="player-title">Nenhuma música</h3>
         <p id="player-artist">---</p>

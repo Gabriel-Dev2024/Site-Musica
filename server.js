@@ -1,5 +1,5 @@
 import express from "express";
-import { WebSocketServer } from "ws";
+import { WebSocketServer, WebSocket } from "ws";
 import { createServer } from "http";
 
 const app = express();
@@ -11,9 +11,10 @@ app.use(express.static("public"));
 // Chat via WebSocket
 wss.on("connection", (ws) => {
   ws.on("message", (msg) => {
+    const formattedMsg = `Usuário: ${msg}`; // opcional
     wss.clients.forEach((client) => {
-      if (client.readyState === ws.OPEN) {
-        client.send(msg.toString());
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(formattedMsg);
       }
     });
   });
