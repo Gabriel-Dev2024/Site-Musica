@@ -104,9 +104,6 @@ document.querySelectorAll(".tab").forEach((tab) => {
   });
 });
 
-
-
-
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const songsDiv = document.getElementById("songs");
